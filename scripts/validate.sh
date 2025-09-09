@@ -5,4 +5,4 @@ set -euo pipefail
 curl -fsS http://localhost:3000/ || exit 1
 
 # Verifica frontend servido pelo httpd
-curl -fsS http://localhost/oficina27/index.html || exit 1
+curl -fsS http://localhost/index.html || exit 1
