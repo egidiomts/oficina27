@@ -5,21 +5,19 @@ phases:
     runtime-versions:
       nodejs: 18
     commands:
+      - echo "Entrando no diretório do projeto..."
+      - cd /var/www/html/oficina27
       - echo "Instalando dependências do backend..."
       - cd backend
       - npm install --production
       - cd ..
   build:
     commands:
-      - echo "Copiando frontend..."
-      - mkdir -p dist/frontend
-      - cp -r frontend/* dist/frontend/
-      - echo "Copiando backend..."
-      - mkdir -p dist/backend
-      - cp -r backend/* dist/backend/
+      - echo "Copiando arquivos do frontend para o Apache..."
+      - cp -r frontend/* /var/www/html/oficina27/frontend/
+      - echo "Copiando arquivos do backend..."
+      - cp -r backend/* /var/www/html/oficina27/backend/
       - echo "Build finalizado com sucesso."
 artifacts:
   files:
     - "**/*"
-  base-directory: dist
-  discard-paths: no
