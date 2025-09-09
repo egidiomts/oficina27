@@ -1,0 +1,25 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      - echo "Instalando dependências do backend..."
+      - cd backend
+      - npm install --production
+      - cd ..
+  build:
+    commands:
+      - echo "Copiando frontend..."
+      - mkdir -p dist/frontend
+      - cp -r frontend/* dist/frontend/
+      - echo "Copiando backend..."
+      - mkdir -p dist/backend
+      - cp -r backend/* dist/backend/
+      - echo "Build finalizado com sucesso."
+artifacts:
+  files:
+    - "**/*"
+  base-directory: dist
+  discard-paths: no
