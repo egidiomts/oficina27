@@ -21,3 +21,5 @@ phases:
 artifacts:
   files:
     - "**/*"
+  base-directory: "/var/www/html/oficina27"
+  discard-paths: no
