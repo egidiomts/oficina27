@@ -25,3 +25,8 @@ hooks:
     - location: scripts/validate.sh
       timeout: 300
       runas: ec2-user
+
+  AfterDeploy:
+    - location: scripts/validate.sh
+      timeout: 300
+      runas: ec2-user
