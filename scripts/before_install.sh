@@ -5,5 +5,5 @@ set -euo pipefail
 sudo mkdir -p /var/www/html/oficina27
 
 # Parar app antigo (se existir)
-pm2 stop oficina27 || true
+sudo pm2 stop oficina27 || true
 
