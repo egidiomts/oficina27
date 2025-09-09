@@ -3,5 +3,5 @@ set -euo pipefail
 
 cd /var/www/html/oficina27/backend
 
-# Opcional: rodar migrações/seed aqui, se houver
-# npm run migrate
+pm2 start --name app-oficina27 "npm start" --update-env
+
