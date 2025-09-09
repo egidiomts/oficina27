@@ -1,8 +1,18 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Verifica backend (ajuste a porta/rota conforme seu server.js)
-curl -fsS http://localhost:3000/ || exit 1
+echo ">>> Validando backend..."
+# Ajuste a porta/rota se necessário
+if ! curl -fsS http://localhost:3000/; then
+  echo "Backend não respondeu na porta 3000"
+  exit 1
+fi
 
-# Verifica frontend servido pelo httpd
-curl -fsS http://localhost/index.html || exit 1
+echo ">>> Validando frontend..."
+# Ajuste o caminho de acordo com o DocumentRoot do Apache
+if ! curl -fsS http://localhost/oficina27/frontend/index.html; then
+  echo "Frontend não encontrado em /oficina27/frontend/index.html"
+  exit 1
+fi
+
+echo ">>> Validação concluída com sucesso!"
