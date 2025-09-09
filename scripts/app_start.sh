@@ -5,4 +5,4 @@ set -euo pipefail
 cd /var/www/html/oficina27/backend
 
 # Inicia pelo PM2
-pm2 start --name oficina27 "npm start" --update-env
+sudo pm2 start --name oficina27 "sudo npm start" --update-env
