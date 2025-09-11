@@ -7,13 +7,23 @@
   </head>
 
   <body>
-    <div style="display: flex; gap: 10">
+    <div
+      style="display: flex; justify-content: space-between; align-items: center"
+    >
       <h1>Catálogo de Produtos</h1>
-      <button>Exportar PDF</button>
+      <button id="exportPdf">Exportar PDF</button>
     </div>
-    <a href="cadastrar.html">Cadastrar novo produto</a>
+    <!-- <a href="cadastrar.html">Cadastrar novo produto</a> -->
+    <button id="cadastrarProdutoBtn">Cadastrar novo produto</button>
     <div id="produtos"></div>
     <script src="scripts/config.js"></script>
     <script src="scripts/listagem.js"></script>
+    <script>
+      document
+        .getElementById("cadastrarProdutoBtn")
+        .addEventListener("click", () => {
+          window.location.href = "cadastrar.html"
+        })
+    </script>
   </body>
 </html>
